@@ -1,0 +1,67 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-01-28 17:22+0200\n"
+"PO-Revision-Date: 2020-01-28 17:26+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: app/__init__.py:21
+msgid "Please log in to access this page."
+msgstr ""
+
+#: app/forms.py:9
+msgid "Username"
+msgstr "Пользователь"
+
+#: app/forms.py:10
+msgid "Password"
+msgstr "Пароль"
+
+#: app/forms.py:11
+msgid "Remember Me"
+msgstr "Запомнить"
+
+#: app/forms.py:12
+msgid "Sign In"
+msgstr "Го-го-го"
+
+#: app/routes.py:31
+msgid "Your post is now live!"
+msgstr "Ты это сделал!"
+
+#: app/routes.py:125 app/routes.py:141
+#, python-format
+msgid "User %(username)s not found."
+msgstr "Чувака %(username)s тут нет."
+
+#: app/templates/404.html:4
+msgid "File Not Found"
+msgstr "Нет такого файла. Попробуй еще раз"
+
+#: app/templates/404.html:5
+msgid "Back"
+msgstr "<- Тудой"
+
+#: app/templates/_post.html:14
+#, python-format
+msgid "%(username)s said %(when)s"
+msgstr "%(username)s говорит %(when)s"
+
+#: app/templates/index.html:5
+#, python-format
+msgid "Hi, %(username)s!"
+msgstr "Йо, %(username)s!"

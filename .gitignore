@@ -1,0 +1,7 @@
+.env
+venv
+migrations/versions/__pycache__
+app.db
+messages.pot
+__pycache__
+logs
