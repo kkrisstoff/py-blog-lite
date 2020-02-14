@@ -1,6 +1,6 @@
 from datetime import datetime
 from flask import render_template, flash, redirect, url_for, request, g, \
-    jsonify, current_app
+    jsonify, current_app, make_response
 from flask_login import current_user, login_required
 from flask_babel import _, get_locale
 from guess_language import guess_language
@@ -62,7 +62,7 @@ def explore():
                            prev_url=prev_url)
 
 
-@bp.route('/user/<username>')
+@bp.route('/user/<string:username>')
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
@@ -148,3 +148,21 @@ def search():
         if page > 1 else None
     return render_template('search.html', title=_('Search'), posts=posts,
                            next_url=next_url, prev_url=prev_url)
+
+
+# Example
+@bp.route('/cookie/')
+def cookie():
+    if not request.cookies.get('foo'):
+        res = make_response("Setting a cookie")
+        res.set_cookie('foo', 'bar', max_age=None)
+    else:
+        res = make_response("Value of cookie foo is {}".format(request.cookies.get('foo')))
+    return res
+
+
+@bp.route('/delete-cookie/')
+def delete_cookie():
+    res = make_response("Cookie Removed")
+    res.set_cookie('foo', 'bar', max_age=0)
+    return res

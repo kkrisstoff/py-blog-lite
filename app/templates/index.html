@@ -8,7 +8,10 @@
 <br>
 {% endif %}
 {% for post in posts %}
-{% include '_post.html' %}
+    <p>{{ loop.index }}</p>
+    {% include '_post.html' %}
+{% else %}
+    <p>Post list is empty</p>
 {% endfor %}
 <nav aria-label="...">
     <ul class="pager">

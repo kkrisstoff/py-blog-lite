@@ -5,7 +5,7 @@
 ### Run App
 1. create venv
 ```shell script
-$ python3 -m venv venv
+$ python -m venv venv
 ```
 2. activate venv
 ```shell script

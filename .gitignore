@@ -5,3 +5,5 @@ app.db
 messages.pot
 __pycache__
 logs
+
+.idea
