@@ -2,7 +2,7 @@
 
 ## Blog Lite
 
-### Run App
+### Run App localhost and venv Mode
 1. create venv
 ```shell script
 $ python -m venv venv
@@ -15,24 +15,42 @@ $ source venv/bin/activate
 ```shell script
 (venv) $ pip install -r requirements.txt
 ```
+
+4. Add env
 ```shell script
-export FLASK_APP=application.py
+(venv) $ export FLASK_APP=application.py
 ```
+
+5. Run Server (Name/name12)
+```shell script
+(venv) $ flask run
+```
+
+______________________________________________________
+
+### db migrate
+```shell script
+(venv) $ flask db migrate -m "<migration messages>"
+(venv) $ flask db upgrade
+```
+
 ### translate
+Update all languages after making changes to `_()` and `_l()`:
+```shell script
+(venv) $ fflask translate update
+```
+
 Add new language:
 ```shell script
 (venv) $ flask translate init <language-code>
-```
-
-Update all languages after making changes to `_()` and `_l()` :
-```shell script
-(venv) $ flask translate update
 ```
 
 Compile all languages after updating translation files:
 ```shell script
 (venv) $ flask translate compile
 ```
+
+________________________________________________________
 
 ### Search
 ```shell script
