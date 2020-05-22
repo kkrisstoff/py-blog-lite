@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-04-24 11:42+0300\n"
+"POT-Creation-Date: 2020-05-21 17:27+0300\n"
 "PO-Revision-Date: 2020-01-28 17:26+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.8.0\n"
 
-#: app/__init__.py:19
+#: app/__init__.py:21
 msgid "Please log in to access this page."
 msgstr ""
 
@@ -53,15 +53,15 @@ msgstr "Го-го-го"
 
 #: app/auth/routes.py:21
 msgid "Invalid username or password"
-msgstr ""
+msgstr "Неверный имя/пароль"
 
 #: app/auth/routes.py:47
 msgid "Congratulations, you are now a registered user!"
-msgstr ""
+msgstr "Ты уже тут!!"
 
 #: app/auth/routes.py:49
 msgid "Register"
-msgstr ""
+msgstr "Регистрация"
 
 #: app/auth/routes.py:63
 msgid "Check your email for the instructions to reset your password"
@@ -69,15 +69,15 @@ msgstr ""
 
 #: app/auth/routes.py:66
 msgid "Reset Password"
-msgstr ""
+msgstr "Сбросить пароль ваще"
 
 #: app/auth/routes.py:80
 msgid "Your password has been reset."
-msgstr ""
+msgstr "Ваш пароль сброшен ваще"
 
 #: app/main/forms.py:11
 msgid "About me"
-msgstr ""
+msgstr "Все обо мне"
 
 #: app/main/forms.py:13 app/main/forms.py:28 app/main/forms.py:45
 msgid "Submit"
@@ -142,12 +142,20 @@ msgstr ""
 msgid "You are not following %(username)s."
 msgstr ""
 
-#: app/main/routes.py:188
+#: app/main/routes.py:189
 msgid "Your message has been sent."
 msgstr ""
 
-#: app/main/routes.py:190
+#: app/main/routes.py:191
 msgid "Send Message"
+msgstr ""
+
+#: app/main/routes.py:231
+msgid "An export task is currently in progress"
+msgstr ""
+
+#: app/main/routes.py:233
+msgid "Exporting posts..."
 msgstr ""
 
 #: app/templates/_post.html:16
@@ -163,11 +171,11 @@ msgstr ""
 msgid "Translate"
 msgstr ""
 
-#: app/templates/base.html:40 app/templates/messages.html:4
+#: app/templates/base.html:52 app/templates/messages.html:4
 msgid "Messages"
 msgstr ""
 
-#: app/templates/base.html:82
+#: app/templates/base.html:100
 msgid "Error: Could not contact server."
 msgstr ""
 
@@ -201,7 +209,15 @@ msgstr ""
 msgid "Send Message to %(recipient)s"
 msgstr ""
 
-#: app/templates/user.html:23
+#: app/templates/user.html:16
+msgid "Edit your profile"
+msgstr ""
+
+#: app/templates/user.html:22
+msgid "Export your posts"
+msgstr ""
+
+#: app/templates/user.html:34
 msgid "Send private message"
 msgstr ""
 
