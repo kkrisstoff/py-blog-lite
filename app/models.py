@@ -88,6 +88,19 @@ class PaginatedAPIMixin(object):
         }
         return data
 
+    @staticmethod
+    def to_collection(query, page, per_page):
+        resources = query.paginate(page, per_page, False)
+        return [{
+            'id': item.id,
+            'username': item.username,
+            'last_seen': item.last_seen.isoformat() + 'Z',
+            'about_me': item.about_me,
+            'post_count': item.posts.count(),
+            'follower_count': item.followers.count(),
+            'followed_count': item.followed.count(),
+        } for item in resources.items]
+
 
 class User(UserMixin, PaginatedAPIMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
