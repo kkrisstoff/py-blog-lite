@@ -38,8 +38,6 @@ def export_posts(user_id):
             i += 1
             _set_task_progress(100 * i // total_posts)
 
-        print('posts')
-        print(data)
         send_email('[Blog] Your blog posts',
                    sender=app.config['ADMINS'][0], recipients=[user.email],
                    text_body=render_template('email/export_posts.txt', user=user),

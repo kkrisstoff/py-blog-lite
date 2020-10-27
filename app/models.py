@@ -94,7 +94,7 @@ class PaginatedAPIMixin(object):
         return [{
             'id': item.id,
             'username': item.username,
-            'last_seen': item.last_seen.isoformat() + 'Z',
+            'last_seen': item.last_seen.isoformat() + 'Z' if item.last_seen else None,
             'about_me': item.about_me,
             'post_count': item.posts.count(),
             'follower_count': item.followers.count(),
@@ -189,24 +189,26 @@ class User(UserMixin, PaginatedAPIMixin, db.Model):
             return
         return User.query.get(id)
 
-    def to_dict(self, include_email=False):
+    def to_dict(self, include_email=False, include_links=True):
         data = {
             'id': self.id,
             'username': self.username,
-            'last_seen': self.last_seen.isoformat() + 'Z',
+            'last_seen': self.last_seen.isoformat() + 'Z' if self.last_seen else None,
             'about_me': self.about_me,
             'post_count': self.posts.count(),
             'follower_count': self.followers.count(),
             'followed_count': self.followed.count(),
-            '_links': {
+        }
+        if include_email:
+            data['email'] = self.email
+        if include_links:
+            data['_links'] = {
                 'self': url_for('api.get_user', id=self.id),
                 'followers': url_for('api.get_followers', id=self.id),
                 'followed': url_for('api.get_followed', id=self.id),
                 'avatar': self.avatar(128)
             }
-        }
-        if include_email:
-            data['email'] = self.email
+
         return data
 
     def from_dict(self, data, new_user=False):

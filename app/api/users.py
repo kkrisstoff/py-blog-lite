@@ -78,12 +78,3 @@ def update_user(id):
     user.from_dict(data, new_user=False)
     db.session.commit()
     return jsonify(user.to_dict())
-
-
-# TODO: tmp endpoints without auth
-@bp.route('v0/users', methods=['GET'])
-def get_users_list():
-    page = request.args.get('page', 1, type=int)
-    per_page = min(request.args.get('per_page', 10, type=int), 100)
-    data = User.to_collection(User.query, page, per_page)
-    return jsonify(data)
