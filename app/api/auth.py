@@ -47,6 +47,20 @@ def login_api():
         })
     res = user.to_dict(include_links=False, include_email=True)
     res['token'] = user.get_token()
-    # TODO: don't sure I need it
-    # db.session.commit()
+    return jsonify(res)
+
+@bp.route('/v0/register', methods=['POST'])
+def register_api():
+    data = request.json
+    username = data['username']
+    email = data['email']
+    password = data['password']
+
+    user = User(username=username, email=email)
+    user.set_password(password)
+    db.session.add(user)
+    db.session.commit()
+
+    res = user.to_dict(include_links=False, include_email=True)
+    res['token'] = user.get_token()
     return jsonify(res)
